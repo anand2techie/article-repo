@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "43f23bd5-2875-44a9-a80b-45d1b4e4fc4d",
+		"name": "News Reader App's Articles API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Article",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"header\": \"Deep Dive to OAuth2.0 and JWT (Part 4 JWT Use Case)\",\n\t\"text\":\"Up your Spring Security game with this tutorial!\",\n\t\"publishDate\": \"2019-01-10\",\n\t\"authors\": [\"Mark Taylor\",\"Darwin King\"],\n\t\"keywords\": [\"security\", \"spring\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Article",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/articles/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"articles",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Article",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"header\": \"Deep Dive to OAuth2.0 and JWT (Part 4 JWT Use Case)\",\n\t\"text\":\"Up your Spring Security game with this tutorial and have fun!\",\n\t\"publishDate\": \"2019-01-10\",\n\t\"authors\": [\"Mark Taylor\",\"Darwin King\", \"Ananth\"],\n\t\"keywords\": [\"security\", \"spring\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/articles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Articles based on criteria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/articles?author=Mark Taylor&keyword=spring&startDate=2019-01-09&endDate=2019-10-11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"articles"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Mark Taylor"
+						},
+						{
+							"key": "keyword",
+							"value": "spring"
+						},
+						{
+							"key": "startDate",
+							"value": "2019-01-09"
+						},
+						{
+							"key": "endDate",
+							"value": "2019-10-11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Article",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/articles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6f97ef8a-2a73-4db0-8129-44e680f2e9d1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c0dafc6c-33be-4eb6-af61-8d5e148e62c1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
